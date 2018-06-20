@@ -79,12 +79,7 @@ model.add(Reshape((54,54,1)))#N, 54x54x16
 '''
 
 model.add(Conv2D(16, kernel_size=(1, 1), strides=(1, 1), activation='relu',padding='same'))#N, 54x54x16
-'''
-model.add(Flatten())#N, 46656
-model.add(Dense(2916, init='uniform',activation='relu'))#N,2916
-model.add(Dropout(0.25))#N,2916
-model.add(Reshape((54,54,1)))#N, 54x54x1
-'''
+
 model.add(Conv2D(16, kernel_size=(3, 3), strides=(1, 1), activation='relu',padding='same'))
 
 
@@ -95,22 +90,11 @@ model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2),padding='same'))
 
 model.add(Conv2D(32, kernel_size=(3, 3), strides=(1, 1),padding='same',
                  activation='relu'))
-'''
-model.add(Flatten())#N, 23328
-model.add(Dense(729, init='uniform',activation='relu'))#N,2916
-model.add(Dropout(0.25))#N,729
-model.add(Reshape((27,27,1)))#N, 27x27x32
-'''
+
 
 model.add(Conv2D(32, kernel_size=(1, 1), strides=(1, 1),padding='same',
                  activation='relu'))#N, 27x27x32
-'''
-model.add(Flatten())#N, 23328
-model.add(Dense(729, init='uniform',activation='relu'))#N,729
-model.add(Dropout(0.25))#N,729
-model.add(Reshape((27,27,1)))#N, 27x27x32
 
-'''
 model.add(Conv2D(32, kernel_size=(3, 3), strides=(1, 1),padding='same',
                  activation='relu'))
 
@@ -123,20 +107,10 @@ model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2),padding='same'))
 
 model.add(Conv2D(64, kernel_size=(3, 3), strides=(1, 1),padding='same',
                  activation='relu'))#14x14x64
-'''
-model.add(Flatten())#N, 12544
-model.add(Dense(196, init='uniform',activation='relu'))#N,196
-model.add(Dropout(0.25))#N,729
-model.add(Reshape((14,14,1)))#N, 14x14x64
-'''
+
 model.add(Conv2D(64, kernel_size=(1, 1), strides=(1, 1),padding='same',
                  activation='relu'))
-'''
-model.add(Flatten())#N, 12544
-model.add(Dense(196, init='uniform',activation='relu'))#N,196
-model.add(Dropout(0.25))#N,729
-model.add(Reshape((14,14,1)))#N, 14x14x64
-'''
+
 model.add(Conv2D(64, kernel_size=(3, 3), strides=(1, 1),padding='same',
                  activation='relu'))
 
@@ -149,21 +123,10 @@ model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2),padding='same'))
 
 model.add(Conv2D(128, kernel_size=(3, 3), strides=(1, 1),padding='same',
                  activation='relu'))#7x7x128
-'''
-model.add(Flatten())#N, 6272
-model.add(Dense(49, init='uniform',activation='relu'))#N,49
-model.add(Dropout(0.25))#N,49
-model.add(Reshape((7,7,1)))#N, 7x7x128
-'''
+
 model.add(Conv2D(128, kernel_size=(1, 1), strides=(1, 1),padding='same',
                  activation='relu'))
-'''
-model.add(Flatten())#N, 6272
-model.add(Dense(49, init='uniform',activation='relu'))#N,49
-model.add(Dropout(0.25))#N,49
-model.add(Reshape((7,7,1)))#N, 7x7x128
 
-'''
 model.add(Conv2D(128, kernel_size=(3, 3), strides=(1, 1),padding='same',
                  activation='relu'))
 
